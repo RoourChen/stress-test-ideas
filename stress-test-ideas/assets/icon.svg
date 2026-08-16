@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">反向吐槽顾问</title>
+  <desc id="desc">A speech bubble with a magnifying glass and warning spark.</desc>
+  <defs>
+    <linearGradient id="bg" x1="32" y1="24" x2="224" y2="232" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF7A45"/>
+      <stop offset="1" stop-color="#C9362B"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="56" fill="url(#bg)"/>
+  <path d="M53 62h150a17 17 0 0 1 17 17v82a17 17 0 0 1-17 17h-71l-42 32 8-32H53a17 17 0 0 1-17-17V79a17 17 0 0 1 17-17Z" fill="#FFF8F1"/>
+  <circle cx="119" cy="119" r="31" fill="none" stroke="#472D2A" stroke-width="12"/>
+  <path d="m143 143 28 28" stroke="#472D2A" stroke-width="12" stroke-linecap="round"/>
+  <path d="M181 81v22M170 92h22" stroke="#C9362B" stroke-width="9" stroke-linecap="round"/>
+</svg>
