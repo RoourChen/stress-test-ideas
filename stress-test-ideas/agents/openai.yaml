@@ -1,0 +1,9 @@
+interface:
+  display_name: "反向吐槽顾问"
+  short_description: "用毒舌但理性的方式核验市场、拆解计划风险并设计最小验证"
+  default_prompt: "我有个计划：……（$stress-test-ideas 会自动开始反向审视）"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/icon.svg"
+
+policy:
+  allow_implicit_invocation: true
