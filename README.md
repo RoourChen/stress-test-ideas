@@ -48,7 +48,7 @@ flowchart LR
 | 图标 | SVG |
 | 实际分析 | 宿主 Agent 的模型、上下文与可用检索工具 |
 
-仓库提供 Skill 定义，没有独立网页服务、后台进程或 Python 安装依赖。
+仓库提供 Skill 定义，没有独立网页服务或后台进程。正常安装和使用 Skill 无需安装 Python 依赖；下文的 Python 校验器仅供维护检查使用。
 
 ## 📁 目录结构
 
@@ -56,6 +56,9 @@ flowchart LR
 stress-test-ideas/              # 仓库根目录
 ├── README.md
 ├── LICENSE
+├── .github/workflows/check.yml # GitHub 自动检查
+├── scripts/check_skill.py      # 文件与配置校验器
+├── requirements-check.txt      # 仅供维护检查使用
 └── stress-test-ideas/          # 安装时复制这一层
     ├── SKILL.md
     ├── agents/openai.yaml
@@ -114,7 +117,16 @@ cp -R stress-test-ideas/stress-test-ideas ~/.codex/skills/
 
 ## 🧪 检查是否按预期工作
 
-仓库没有自动化测试脚本。安装后可以在宿主中进行以下人工检查，实际回答会受模型与工具能力影响。
+每次推送或提交 Pull Request，GitHub 都会自动检查 README、许可证、Skill 元信息、调用配置，以及配置引用的图标。检查记录见 [Skill integrity](https://github.com/RoourChen/stress-test-ideas/actions/workflows/check.yml)，绿色表示通过，红色表示发现问题；也支持在 Actions 页面手动运行。
+
+维护者可以用 Python 3.11 在本地执行相同检查（普通使用者安装 Skill 时无需执行）：
+
+```bash
+python3 -m pip install -r requirements-check.txt
+python3 scripts/check_skill.py
+```
+
+自动检查不评判模型回答质量。安装后仍可在宿主中进行以下人工检查，实际回答会受模型与工具能力影响。
 
 | 测试输入 | 预期行为 |
 | --- | --- |
